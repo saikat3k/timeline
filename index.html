@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Timeline</title>
+    <!-- font awwesome  -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- font awwesome  -->
+    <style>
+        body{
+            background-color: #1E1E30;
+        }
+        .timeline-area{
+            background-color: #1E1E30;
+            margin: 0;
+            padding: 0;
+        }
+        .timeline{
+            width:1200px;
+            margin: 0 auto;
+            padding: 20px 0px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50% , -50%);
+        }
+        .timeline-single{
+            background-color: #27293F;
+            width: 600px;
+            margin: 0 auto;
+            border-radius: 7px;
+            position: relative;
+            box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.5);
+            -webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.5);
+            -moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.5);
+        }
+        .timeline::before{
+            content: '';
+            width: 4px;
+            position: absolute;
+            height: 490px;
+            margin: 0 auto;
+            top: 10px;
+            bottom: 0;
+            left: 20%;
+            background-color: #27293F;
+            /* display: block; */
+            box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.5);
+            -webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.5);
+            -moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.5);
+        }
+        .timeline-single::after{
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            clip-path: polygon(30% 49%, 100% 0, 100% 100%);
+            top: 30px;
+            left: -19px;
+            background-color: #27293F;
+            display: block;
+            box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.5);
+            -webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.5);
+            -moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.5);
+        }
+        .timeline-single{
+            position: relative;
+            padding: 10px;
+            margin-bottom: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .one::before{
+            content: '';
+            width: 35px;
+            height: 35px;
+            position: absolute;
+            border-radius: 50%;
+            left: -64px;
+            background-color: #008FFF;
+            box-shadow: -2px 0px 5px 1px rgba(0,0,0,0.5);
+            -webkit-box-shadow: -2px 0px 5px 1px rgba(0,0,0,0.5);
+            -moz-box-shadow: -2px 0px 5px 1px rgba(0,0,0,0.5);
+        }
+        .two::before{
+            content: '';
+            width: 35px;
+            height: 35px;
+            position: absolute;
+            border-radius: 50%;
+            left: -64px;
+            background-color: #FF4C93;
+            box-shadow: -2px 0px 5px 1px rgba(0,0,0,0.5);
+            -webkit-box-shadow: -2px 0px 5px 1px rgba(0,0,0,0.5);
+            -moz-box-shadow: -2px 0px 5px 1px rgba(0,0,0,0.5);
+        }
+        .three::before{
+            content: '';
+            width: 35px;
+            height: 35px;
+            position: absolute;
+            border-radius: 50%;
+            left: -64px;
+            background-color: #00C398;
+            box-shadow: -2px 0px 5px 1px rgba(0,0,0,0.5);
+            -webkit-box-shadow: -2px 0px 5px 1px rgba(0,0,0,0.5);
+            -moz-box-shadow: -2px 0px 5px 1px rgba(0,0,0,0.5);
+        }
+        .timeline-single-titile{
+            font-size: 0.9rem;
+            padding: 5px;
+            /* background-color: tomato; */
+            display: inline;
+            font-weight: normal;
+            color: #FFF;
+            letter-spacing: 0.5px;
+            border-radius: 4px;
+        }
+        .primary{
+            background-color: #008FFF;
+        }
+        .danger{
+            background-color: #FF4C93;
+        }
+        .success{
+            background-color: #00C398;
+        }
+        .timeline-single-para{
+            font-size: 0.8rem;
+            line-height: 1.2rem;
+            letter-spacing: 0.5px;
+            color: #ffffffc5;
+            opacity: 0.9;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .face-wink{
+            position: absolute;
+            left: -60px;
+            top: 23px;
+        }
+        .face-wink-area{
+            text-decoration: none;
+            color: #FFF;
+            font-size: 1.7rem;
+        }
+        .face-smile{
+            position: absolute;
+            left: -63px;
+            top: 23px;
+        }
+        .time-para{
+            font-size: 0.6rem;
+            font-weight: normal;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #ffffffc3;
+            letter-spacing: 1px;
+            opacity: 0.8;
+        }
+        .timeline-single{
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="timeline-area">
+        <div class="timeline">
+            <div class="timeline-single one">
+                <h1 class="timeline-single-titile primary">Primary</h1>
+                <p class="timeline-single-para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, consequatur dolore magni quo in eum incidunt. Suscipit commodi asperiores quos voluptatum, tempore dolor minima fuga porro omnis id quaerat. Quam.</p>
+                <p class="time-para">1 Hours Ago</p>
+                <div class="face-wink">
+                    <a href="#" class="face-wink-area"><i class="fa-regular fa-face-smile-wink"></i></a>
+                </div>
+            </div>
+            <div class="timeline-single two">
+                <h1 class="timeline-single-titile danger">Danger</h1>
+                <p class="timeline-single-para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, consequatur dolore magni quo in eum incidunt. Suscipit commodi asperiores quos voluptatum, tempore dolor minima fuga porro omnis id quaerat. Quam.</p>
+                <p class="time-para">2 Hours Ago</p>
+                <div class="face-wink">
+                    <a href="#" class="face-wink-area"><i class="fa-regular fa-face-grin-hearts"></i></a>
+                </div>
+            </div>
+            <div class="timeline-single three">
+                <h1 class="timeline-single-titile success">Success</h1>
+                <p class="timeline-single-para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, consequatur dolore magni quo in eum incidunt. Suscipit commodi asperiores quos voluptatum, tempore dolor minima fuga porro omnis id quaerat. Quam.</p>
+                <p class="time-para">6 Hours Ago</p>
+                <div class="face-wink face-smile">
+                    <a href="#" class="face-wink-area"><i class="fa-regular fa-face-grin-tears"></i><a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
